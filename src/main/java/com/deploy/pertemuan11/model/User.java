@@ -6,11 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity 11usages
+@Entity
 @Data
-@uilder
+@Builder
 @Table(name = "users")
-@ALlArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 
 public class User {
@@ -20,3 +20,4 @@ public class User {
     private String password;
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Profile profile;
+}
