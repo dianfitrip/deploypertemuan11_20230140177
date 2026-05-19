@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Violet Garden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #6a1b9a;
+        }
+        .reg-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 25px rgba(155, 89, 182, 0.2);
+            width: 380px;
+            text-align: center;
+            border: 3px solid #d1c4e9;
+        }
+        h2 { margin-bottom: 15px; font-weight: 600; }
+        .flower-icon { color: #ba68c8; font-size: 1.8rem; }
+        input {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: 2px solid #e1bee7;
+            border-radius: 12px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        input:focus { border-color: #9c27b0; }
+        button {
+            background-color: #ba68c8;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        button:hover { background-color: #9c27b0; }
+        .back-login { margin-top: 15px; display: block; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+<div class="reg-container">
+    <i class="fas fa-fan flower-icon"></i>
+    <h2>Join Our Garden</h2>
+    <form th:action="@{/register}" method="post" th:object="${request}">
+        <input type="text" th:field="*{username}" placeholder="Username">
+        <input type="password" th:field="*{password}" placeholder="Password">
+        <input type="text" th:field="*{nama}" placeholder="Nama Lengkap">
+        <input type="text" th:field="*{alamat}" placeholder="Alamat Rumah">
+        <button type="submit">Daftar Sekarang <i class="fas fa-leaf"></i></button>
+    </form>
+    <a th:href="@{/login}" class="back-login" style="color: #6a1b9a; text-decoration: none;">
+        Sudah punya akun? <b>Login</b>
+    </a>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Violet Garden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: #f8f0ff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #4a148c;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .profile-card {
+            background: white;
+            width: 450px;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 2px solid #e1bee7;
+        }
+        .card-top {
+            background: #ce93d8;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .avatar {
+            background: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: -40px;
+            border: 5px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #9c27b0;
+        }
+        .card-body {
+            padding: 60px 30px 30px;
+            text-align: left;
+        }
+        .info-group {
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #e1bee7;
+            padding-bottom: 10px;
+        }
+        .label {
+            font-size: 0.8rem;
+            color: #ba68c8;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .value {
+            font-size: 1.1rem;
+            display: block;
+            color: #4a148c;
+        }
+        .logout-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #f44336;
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .logout-btn:hover { background: #d32f2f; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1><i class="fas fa-asterisk"></i> My Profile</h1>
+    <p>Selamat datang kembali di dunia Violet!</p>
+</div>
+
+<div class="profile-card">
+    <div class="card-top">
+        <div class="avatar">
+            <i class="fas fa-user-tie"></i>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="info-group">
+            <span class="label">Username</span>
+            <span class="value" th:text="${user.username}">-</span>
+        </div>
+        <div class="info-group">
+            <span class="label">Nama Lengkap</span>
+            <span class="value" th:text="${profile.nama}">-</span>
+        </div>
+        <div class="info-group">
+            <span class="label">Alamat</span>
+            <span class="value" th:text="${profile.alamat}">-</span>
+        </div>
+
+        <div style="text-align: center;">
+            <a th:href="@{/logout}" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
+</div>
+
+<p style="margin-top: 30px; font-size: 0.8rem; color: #ba68c8;">Violet Pastel Theme &copy; 2024</p>
+
+</body>
+</html>
